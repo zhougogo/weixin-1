@@ -32,9 +32,10 @@ class WechatController extends Controller
                     return "欢迎关注我们的微信公众号！回复关键字 起初礼品申领 领取礼品二维码。";
                     break;
                 case 'text':
-                    if ($message->content == '起初礼品申领') {
+                    if ($message->content == '1') {
                         $openid = $message->FromUserName;
                         $user = Vend_user::where('openid', $openid)->first();
+                        $
                         if ($user->isnew == 1) {
                             $qrcode = Qrcode::where('status', 0)->first();
                             $qrcode->status = 1;
@@ -46,7 +47,8 @@ class WechatController extends Controller
                             return "您已经领取过起初礼品二维码";
                         }
                     }
-                    return "欢迎关注我们的微信公众号！回复关键字 起初礼品申领 领取礼品二维码。";
+                    // return "欢迎关注我们的微信公众号！回复关键字 起初礼品申领 领取礼品二维码。";
+                    return $message->content;
                     break;
                 case 'image':
                     return '收到图片消息';
