@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Vend_user;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -10,7 +12,13 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('/test', function ()
+{
+	$vend = new Vend_user;
+    $vend->openid = '231';
+    $vend->save();
+    return 'true';
+});
 
 Route::group(['middleware' => 'wechat.oauth'], function () {
 });

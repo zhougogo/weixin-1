@@ -24,15 +24,11 @@ class WechatController extends Controller
         $wechat->server->setMessageHandler(function($message){
             switch ($message->MsgType) {
                 case 'event':
-                    // if ($message->Event == 'subscribe') {
-                    //     $vend = new Vend_user;
-                    //     $vend->openid = $message->FromUserName;
-                    //     $vend->save();
-                    // }
-                    $vend = new Vend_user;
-                    $vend->openid = $message->FromUserName;
-                    $vend->save();
-
+                    if ($message->Event == 'subscribe') {
+                        $weixinuser = new Vend_user;
+                        $weixinuser->openid = $message->FromUserName;
+                        $weixinuser->save();
+                    }
                     return "欢迎关注我们的微信公众号！回复关键字 起初礼品申领 领取礼品二维码。";
                     break;
                 case 'text':
