@@ -35,7 +35,6 @@ class WechatController extends Controller
                     if ($message->content == '1') {
                         $openid = $message->FromUserName;
                         $user = Vend_user::where('openid', $openid)->first();
-                        $
                         if ($user->isnew == 1) {
                             $qrcode = Qrcode::where('status', 0)->first();
                             $qrcode->status = 1;
