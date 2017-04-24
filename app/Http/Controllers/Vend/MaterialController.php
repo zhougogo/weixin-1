@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use EasyWeChat\Foundation\Application;
 use App\Models\Qrcode;
+use SimpleSoftwareIO\QrCode\Facades\QrCode as SSQrCode;
 
 class MaterialController extends Controller
 {
