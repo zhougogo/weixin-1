@@ -17,5 +17,6 @@ Route::get('/', function () {
 
 
 Route::group(['middleware' => 'wechat.oauth'], function () {
-	Route::any('/wechat', 'Weixin\\WechatController@serve');
 });
+
+Route::any('/wechat', 'Weixin\\WechatController@serve');
