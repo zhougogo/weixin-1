@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Weixin;
+namespace App\Http\Controllers\Vend;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -15,7 +15,7 @@ class MaterialController extends Controller
     {
     	$this->material = $material->material;
     }
-
+    //上传贩卖机领奖二维码
     public function image()
     {
     	$qrcode = Qrcode::where('isupload', 0)->first();
