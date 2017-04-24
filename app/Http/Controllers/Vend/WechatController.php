@@ -32,7 +32,7 @@ class WechatController extends Controller
                     return "欢迎关注我们的微信公众号！回复关键字 起初礼品申领 领取礼品二维码。";
                     break;
                 case 'text':
-                    if ($message->content == '1') {
+                    if ($message->Content == '起初礼品申领') {
                         $openid = $message->FromUserName;
                         $user = Vend_user::where('openid', $openid)->first();
                         if ($user->isnew == 1) {
