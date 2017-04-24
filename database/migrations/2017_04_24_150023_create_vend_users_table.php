@@ -15,7 +15,7 @@ class CreateVendUsersTable extends Migration
     {
         Schema::create('vend_users', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('openid');
+            $table->string('openid')->unique();
             $table->boolean('isnew')->default(1);
             $table->timestamps();
         });

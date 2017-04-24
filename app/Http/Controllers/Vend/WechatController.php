@@ -43,6 +43,8 @@ class WechatController extends Controller
                             $qrcode = Qrcode::where('status', 0)->first();
                             $qrcode->status = 1;
                             $qrcode->save();
+                            $user->isnew = 0;
+                            $user->save();
                             return new Image(['media_id' => $qrcode->media_id]);
                         }else{
                             return "您已经领取过起初礼品二维码";
