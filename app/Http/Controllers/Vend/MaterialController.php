@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Vend;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use EasyWeChat\Foundation\Application;
-use App\Models\Qrcode;
 
 class MaterialController extends Controller
 {
@@ -18,7 +17,7 @@ class MaterialController extends Controller
     //上传贩卖机领奖二维码
     public function image()
     {
-    	$qrcode = Qrcode::where('isupload', 0)->first();
+    	$qrcode = App\Models\Qrcode::where('isupload', 0)->first();
     	QrCode::format('png')->size(250)->generate($qrcode->code, public_path('vend/'.$qrcode->code.'.png'));
     	$result = $this->material->uploadImage(public_path('vend/'.$qrcode->code.'.png'));
     	$result = json_decode($result);
