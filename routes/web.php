@@ -19,4 +19,11 @@ Route::get('/', function () {
 Route::group(['middleware' => 'wechat.oauth'], function () {
 });
 
-Route::any('/wechat', 'Weixin\\WechatController@serve');
+Route::group(['namespace' => 'Vend'], function ()
+{
+	//自动贩卖机项目
+	//入口
+	Route::any('/wechat', 'WechatController@serve');
+	//上传二维码图片
+	Route::get('/wechat/image', 'MaterialController@image');
+});

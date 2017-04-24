@@ -1,0 +1,30 @@
+<?php
+
+namespace App\Http\Controllers\Weixin;
+
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use EasyWeChat\Foundation\Application;
+use App\Models\Qrcode;
+
+class MaterialController extends Controller
+{
+    public $material;
+
+    public function __construct(Application $material)
+    {
+    	$this->material = $material->material;
+    }
+
+    public function image()
+    {
+    	$qrcode = Qrcode::where('isupload', 0)->first();
+    	QrCode::format('png')->size(250)->generate($qrcode->code, public_path('vend/'.$qrcode->code.'.png'));
+    	$result = $this->material->uploadImage(public_path('vend/'.$qrcode->code.'.png'));
+    	$result = json_decode($result);
+    	$qrcode->media_id = $result->media_id;
+    	$qrcode->save();
+
+    	return $result->media_id;
+    }
+}
