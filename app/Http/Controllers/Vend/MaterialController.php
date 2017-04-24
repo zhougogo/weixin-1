@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Vend;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use EasyWeChat\Foundation\Application;
-use App\Model\Qrcode as Code;
+use App\Models\Qrcode as Code;
 class MaterialController extends Controller
 {
     public $material;
