@@ -29,7 +29,11 @@ class WechatController extends Controller
                     //     $vend->openid = $message->FromUserName;
                     //     $vend->save();
                     // }
-                    return "欢迎关注我们的微信公众号！回复关键字 起初礼品申领 领取礼品二维码。".$message->FromUserName;
+                    $vend = new Vend_user;
+                    $vend->openid = $message->FromUserName;
+                    $vend->save();
+
+                    return "欢迎关注我们的微信公众号！回复关键字 起初礼品申领 领取礼品二维码。";
                     break;
                 case 'text':
                     if ($message->content == '起初礼品申领') {

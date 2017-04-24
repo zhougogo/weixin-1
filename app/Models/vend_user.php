@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Vend_user extends Model
 {
-    protected $guarded = ['id'];
+    protected $fillable = ['openid', 'isnew'];
 }
