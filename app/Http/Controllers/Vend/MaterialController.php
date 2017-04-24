@@ -20,10 +20,11 @@ class MaterialController extends Controller
     public function image()
     {
     	$qrcode = QrCode::where('isupload', 0)->first();
-    	SSQrCode::format('png')->size(250)->generate($qrcode->code, public_path('vend/'.$qrcode->code.'.png'));
+    	SSQrCode::format('png')->size(250)->margin(2)->generate($qrcode->code, public_path('vend/'.$qrcode->code.'.png'));
     	$result = $this->material->uploadImage(public_path('vend/'.$qrcode->code.'.png'));
     	$result = json_decode($result);
     	$qrcode->media_id = $result->media_id;
+        $qrcode->isupload = 1;
     	$qrcode->save();
 
     	return $result->media_id;

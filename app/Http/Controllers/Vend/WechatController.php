@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Vend;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
+use App\Models\Vend_user;
+use App\Models\Qrcode;
+use EasyWeChat\Message\Image;
 
 class WechatController extends Controller
 {
@@ -22,11 +24,27 @@ class WechatController extends Controller
         $wechat->server->setMessageHandler(function($message){
             switch ($message->MsgType) {
                 case 'event':
+                    if ($message->Event == 'subscribe') {
+                        $vend = new Vend_user;
+                        $vend->openid = $message->FromUserName;
+                        $vend->save();
+                    }
                     return "欢迎关注我们的微信公众号！回复关键字 起初礼品申领 领取礼品二维码。";
                     break;
                 case 'text':
-                    // QrCode::format('png')->size(400)->generate('12345678', );
-                    return '收到文字消息';
+                    if ($message->content == '起初礼品申领') {
+                        $openid = $message->FromUserName;
+                        $user = Vend_user::where('openid', $openid)->first();
+                        if ($user->isnew == 1) {
+                            $qrcode = Qrcode::where('status', 0)->first();
+                            $qrcode->status = 1;
+                            $qrcode->save();
+                            return new Image(['media_id' => $qrcode->media_id]);
+                        }else{
+                            return "您已经领取过起初礼品二维码";
+                        }
+                    }
+                    return "欢迎关注我们的微信公众号！回复关键字 起初礼品申领 领取礼品二维码。";
                     break;
                 case 'image':
                     return '收到图片消息';
