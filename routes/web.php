@@ -14,10 +14,7 @@ use App\Models\Vend_user;
 */
 Route::get('/test', function ()
 {
-	$vend = new Vend_user;
-    $vend->openid = '231';
-    $vend->save();
-    return 'true';
+	return 'true';
 });
 
 Route::group(['middleware' => 'wechat.oauth'], function () {

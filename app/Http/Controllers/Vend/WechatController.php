@@ -25,9 +25,13 @@ class WechatController extends Controller
             switch ($message->MsgType) {
                 case 'event':
                     if ($message->Event == 'subscribe') {
-                        $weixinuser = new Vend_user;
-                        $weixinuser->openid = $message->FromUserName;
-                        $weixinuser->save();
+                        $openid = $message->FromUserName;
+                        $user = Vend_user::where('openid', $openid)->first();
+                        if ($user == null) {
+                            $weixinuser = new Vend_user;
+                            $weixinuser->openid = $message->FromUserName;
+                            $weixinuser->save();
+                        }
                     }
                     return "欢迎关注我们的微信公众号！回复关键字 起初礼品申领 领取礼品二维码。";
                     break;
@@ -35,6 +39,18 @@ class WechatController extends Controller
                     if ($message->Content == '起初礼品申领') {
                         $openid = $message->FromUserName;
                         $user = Vend_user::where('openid', $openid)->first();
+                        if ($user == null) {
+                            //以前关注的用户
+                            $weixinuser = new Vend_user;
+                            $weixinuser->openid = $message->FromUserName;
+                            $weixinuser->isnew = 0;
+                            $weixinuser->save();
+                            $qrcode = Qrcode::where('status', 0)->first();
+                            $qrcode->status = 1;
+                            $qrcode->save();
+                            return new Image(['media_id' => $qrcode->media_id]);
+                        }
+                        //新关注的用户
                         if ($user->isnew == 1) {
                             $qrcode = Qrcode::where('status', 0)->first();
                             $qrcode->status = 1;
@@ -43,7 +59,7 @@ class WechatController extends Controller
                             $user->save();
                             return new Image(['media_id' => $qrcode->media_id]);
                         }else{
-                            return "您已经领取过起初礼品二维码，如果没有领到请重新关注我们的公众号。";
+                            return "您已经领取过起初礼品二维码，感谢您的参与。";
                         }
                     }
                     return "回复关键字 起初礼品申领 领取礼品二维码。";
