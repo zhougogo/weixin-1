@@ -43,11 +43,10 @@ class WechatController extends Controller
                             $user->save();
                             return new Image(['media_id' => $qrcode->media_id]);
                         }else{
-                            return "您已经领取过起初礼品二维码";
+                            return "您已经领取过起初礼品二维码，如果没有领到请重新关注我们的公众号。";
                         }
                     }
-                    // return "欢迎关注我们的微信公众号！回复关键字 起初礼品申领 领取礼品二维码。";
-                    return $message->content;
+                    return "回复关键字 起初礼品申领 领取礼品二维码。";
                     break;
                 case 'image':
                     return '收到图片消息';
