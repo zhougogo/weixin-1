@@ -15,7 +15,7 @@ class CreateQrcodesTable extends Migration
     {
         Schema::create('qrcodes', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('code');
+            $table->string('code')->unique();
             $table->boolean('status')->default(0);
             $table->boolean('isupload')->default(0);
             $table->string('media_id')->nullable();
