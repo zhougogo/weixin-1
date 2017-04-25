@@ -74,7 +74,7 @@ class MenuController extends Controller
 		        ],
 		    ],
 		];
-		$menu->add($buttons);
+		$this->menu->add($buttons);
 
     }
 }
