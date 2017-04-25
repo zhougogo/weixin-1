@@ -27,4 +27,6 @@ Route::group(['namespace' => 'Vend'], function ()
 	Route::any('/wechat', 'WechatController@serve');
 	//上传二维码图片
 	Route::get('/wechat/image', 'MaterialController@image');
+	//自定义菜单
+	Route::get('/wechat/menu', 'MenuController@menu');
 });

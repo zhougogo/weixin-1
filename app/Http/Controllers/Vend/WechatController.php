@@ -33,10 +33,10 @@ class WechatController extends Controller
                             $weixinuser->save();
                         }
                     }
-                    return "欢迎关注我们的微信公众号！回复关键字 起初礼品申领 领取礼品二维码。";
+                    return "欢迎关注我们的微信公众号！回复关键字 启初礼品申领 领取礼品二维码。";
                     break;
                 case 'text':
-                    if ($message->Content == '起初礼品申领') {
+                    if ($message->Content == '启初礼品申领') {
                         $openid = $message->FromUserName;
                         $user = Vend_user::where('openid', $openid)->first();
                         if ($user == null) {
@@ -59,10 +59,10 @@ class WechatController extends Controller
                             $user->save();
                             return new Image(['media_id' => $qrcode->media_id]);
                         }else{
-                            return "您已经领取过起初礼品二维码，感谢您的参与。";
+                            return "您已经领取过启初礼品二维码，感谢您的参与。";
                         }
                     }
-                    return "回复关键字 起初礼品申领 领取礼品二维码。";
+                    return "回复关键字 启初礼品申领 领取礼品二维码。";
                     break;
                 case 'image':
                     return '收到图片消息';
