@@ -62,7 +62,7 @@ class WechatController extends Controller
                             return "您已经领取过启初礼品二维码，感谢您的参与。";
                         }
                     }
-                    return "回复关键字 启初礼品申领 领取礼品二维码。";
+                    return '回复关键字"启初礼品申领"领取礼品二维码。';
                     break;
                 case 'image':
                     return '收到图片消息';
