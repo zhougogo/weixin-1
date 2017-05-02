@@ -17,7 +17,12 @@ Route::get('/test', function ()
 	return 'true';
 });
 
-Route::group(['middleware' => 'wechat.oauth'], function () {
+Route::group(['middleware' => 'wechat.oauth:snsapi_userinfo', 'prefix' => 'hs'], function () {
+    Route::get('/user', function(){
+        $user = session('wechat.oauth_user');
+
+        dd($user);
+    });
 });
 
 Route::group(['namespace' => 'Vend'], function ()
