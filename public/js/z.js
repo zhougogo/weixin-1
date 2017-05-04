@@ -12,7 +12,7 @@ var turnplate = {
 $(document).ready(function() {
 	//动态添加大转盘的奖品与奖品区域背景颜色
 	turnplate.restaraunts = ["奖品1", "奖品2", "奖品3", "奖品4", "奖品5", "奖品6", "奖品7", "奖品8", ];
-	turnplate.colors = ["#FFFFFF", "#FFF4D6", "#FFFFFF", "#FFF4D6", "#FFFFFF", "#FFF4D6", "#FFFFFF", "#FFF4D6", "#FFFFFF"];
+	turnplate.colors = ["#ffc43e", "#F8CD5A", "#ffc43e", "#F8CD5A", "#ffc43e", "#F8CD5A", "#ffc43e", "#F8CD5A"];
 //	 turnplate.colors = 
 	var rotateTimeOut = function() {
 		$('#wheelcanvas').rotate({
@@ -45,46 +45,14 @@ $(document).ready(function() {
 		});
 	};
 
-	$('.pointer').click(function() {
+	$('.beginBtm').click(function() {
 		if(turnplate.bRotate) return;
 		turnplate.bRotate = !turnplate.bRotate;
 		//获取随机数(奖品个数范围内)
 		var item = rnd(1, turnplate.restaraunts.length);
 		//奖品数量等于10,指针落在对应奖品区域的中心角度[252, 216, 180, 144, 108, 72, 36, 360, 324, 288]
 		rotateFn(item, turnplate.restaraunts[item - 1]);
-		/* switch (item) {
-			case 1:
-				rotateFn(252, turnplate.restaraunts[0]);
-				break;
-			case 2:
-				rotateFn(216, turnplate.restaraunts[1]);
-				break;
-			case 3:
-				rotateFn(180, turnplate.restaraunts[2]);
-				break;
-			case 4:
-				rotateFn(144, turnplate.restaraunts[3]);
-				break;
-			case 5:
-				rotateFn(108, turnplate.restaraunts[4]);
-				break;
-			case 6:
-				rotateFn(72, turnplate.restaraunts[5]);
-				break;
-			case 7:
-				rotateFn(36, turnplate.restaraunts[6]);
-				break;
-			case 8:
-				rotateFn(360, turnplate.restaraunts[7]);
-				break;
-			case 9:
-				rotateFn(324, turnplate.restaraunts[8]);
-				break;
-			case 10:
-				rotateFn(288, turnplate.restaraunts[9]);
-				break;
-		} */
-//		console.log(item);
+		
 	});
 });
 
@@ -124,8 +92,9 @@ function drawRouletteWheel() {
 			ctx.save();
 
 			//----绘制奖品开始----
-			ctx.fillStyle = "#E5302F";
+			ctx.fillStyle = "#dc770c";
 			var text = turnplate.restaraunts[i];
+
 			var line_height = 17;
 			//translate方法重新映射画布上的 (0,0) 位置
 			ctx.translate(211 + Math.cos(angle + arc / 2) * turnplate.textRadius, 211 + Math.sin(angle + arc / 2) * turnplate.textRadius);
@@ -137,7 +106,7 @@ function drawRouletteWheel() {
 			if(text.indexOf("M") > 0) { //流量包
 				var texts = text.split("M");
 				for(var j = 0; j < texts.length; j++) {
-					ctx.font = j == 0 ? 'bold 20px Microsoft YaHei' : '16px Microsoft YaHei';
+					ctx.font = j == 0 ? 'bold 40px' : '40px';
 					if(j == 0) {
 						ctx.fillText(texts[j] + "M", -ctx.measureText(texts[j] + "M").width / 2, j * line_height);
 					} else {
@@ -154,21 +123,6 @@ function drawRouletteWheel() {
 				//在画布上绘制填色的文本。文本的默认颜色是黑色
 				//measureText()方法返回包含一个对象，该对象包含以像素计的指定字体宽度
 				ctx.fillText(text, -ctx.measureText(text).width / 2, 0);
-			}
-
-			//添加对应图标
-			if(text.indexOf("闪币") > 0) {
-				var img = document.getElementById("shan-img");
-				img.onload = function() {
-					ctx.drawImage(img, -15, 10);
-				};
-				ctx.drawImage(img, -15, 10);
-			} else if(text.indexOf("谢谢参与") >= 0) {
-				var img = document.getElementById("sorry-img");
-				img.onload = function() {
-					ctx.drawImage(img, -15, 10);
-				};
-				ctx.drawImage(img, -15, 10);
 			}
 			//把当前画布返回（调整）到上一个save()状态之前 
 			ctx.restore();

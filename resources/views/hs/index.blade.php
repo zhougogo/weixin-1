@@ -16,7 +16,7 @@
 	</head>
 
 	<body>
-		<div class="page page1" id="page1">
+		<div class="page page1 hidden" id="page1 ">
 			<div class="logo">
 				<img src="img/begin/beginLogo.png" />
 			</div>
@@ -34,9 +34,9 @@
 				<img src="img/p2/ptBg.png" />
 			</div>
 			<div class="content">
-				<div class="contentBg">
+				<!--<div class="contentBg">
 					<img src="img/p2/popupBg.png" />
-				</div>
+				</div>-->
 				<div class="subjectAll">
 					<div class="subject subject1 hidden">
 						<div class="title">
@@ -94,7 +94,7 @@
 						<p>B.惠氏S-26铂臻</p>
 						<p>C.惠氏S-26艾智萌</p>
 					</div>
-					<div class="subject subject8 ">
+					<div class="subject subject8 hidden">
 						<div class="title">
 							你知道惠氏铂臻的在瑞士的科研中心是哪一家吗？
 						</div>
@@ -146,7 +146,7 @@
 
 				</div>
 			</div>
-			<div class="popup popup3">
+			<div class="popup popup3 hidden">
 				<div class="content">
 					<div class="contentBg">
 						<img src="img/error/datiBg.png" />
@@ -167,18 +167,46 @@
 				</div>
 			</div>
 		</div>
-		<div class="page3">
-			<img src="images/1.png" id="shan-img" style="display:none;" />
-			<img src="images/2.png" id="sorry-img" style="display:none;" />
-			<div class="banner">
-				<div class="turnplate" style="background-image:url(img/turnplate-bg.png);background-size:100% 100%;">
-					<canvas class="item" id="wheelcanvas" width="422px" height="422px"></canvas>
-					<img class="pointer" src="img/turnplate-pointer.png" />
+		<div class="page3 page ">
+			<div class="content">
+				<div class="logo">
+					<img src="img/p2/ptBg.png"/>
+				</div>
+				<div class="banner">
+					<div class="turnplate" style="background-image:url(img/turnplate-bg.png);background-size:100% 100%;">
+						<canvas class="item" id="wheelcanvas" width="422px" height="422px"></canvas>
+						<img class="pointer" src="img/turnplate-pointer.png" />
+					</div>
+				</div>
+				<div class="btm beginBtm">
+						<img src="img/beginBt m.png"/>
 				</div>
 			</div>
+			
+			<div class="popup hidden">
+				<div class="container">
+					<div class="num">
+						<div class="numBg">
+							<img src="img/cBg.png"/>
+						</div>
+						<p>中奖码</p>
+						<span>12345</span>
+					</div>
+					<p class="shong">恭喜你抽中了<span>未知</span>奖品</p>
+					<p class="getNum">请凭此号码去工作人员处领取奖品。</p>
+					<div class="cancel">
+						<img src="img/error/cancel.png"/>
+					</div>
+
+
+				</div>
+			</div>
+
+
 
 		</div>
 
 	</body>
+	<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
 
 </html>
