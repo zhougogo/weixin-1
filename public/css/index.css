@@ -1,0 +1,286 @@
+html{
+	width: 100%;
+	height: 100%;
+	
+}
+body{
+	width: 100%;
+	height: 100%;
+}
+.page{
+	width: 100%;
+	height: 100%;
+	background: url(../img/begin/bg.png) no-repeat center center;
+	-webkit-background-size: 100% 100%;
+	background-size: 100% 100%;
+}
+img{
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+/*....游戏开始....*/
+.page1{
+	display: none;
+}
+.page1 .logo{
+	position: absolute;
+	width: 54%;
+	left: 0;
+	right: 0;
+	margin: auto;
+	top: 7%;
+
+
+}
+.page1 .content{
+	width: 90%;
+	height: 34%;
+	position: relative;
+	left: 0;
+	right: 0;
+	margin: auto;
+	top: 48%;
+}
+.page1 .content .contentBg{
+	width: 100%;
+	position: absolute;
+
+}
+.page1 .content .btm{
+	position: absolute;
+	z-index: 10;
+	width: 48%;
+	left: 0;
+	right: 0;
+	/*bottom: 0;*/
+	top: 60%;
+	margin: auto;
+	
+}
+/*....第二页...*/
+.page2{
+	
+}
+.page2 .logo{
+	position: relative;
+	width: 26%;
+	left: 0;
+	right: 0;
+	top: 6%;
+	margin: auto;
+}
+.page2 .content{
+	position: relative;
+	width: 86%;
+	height: 56%;
+	left: 5%;
+	top: 7%;
+
+}
+.page2 .contentBg{
+	width: 100%;
+	position: absolute;
+}
+.page2 .subjectAll{
+	width: 88%;
+	position: absolute;
+	left: 8%;
+	top: 16%;
+
+
+}
+/*...题目...*/
+.page2 .subject{
+	position: absolute;
+	/*top: 20%;*/
+	
+}
+.page2 .title{
+	text-align: center;
+	font-size: 3.2vh;
+	color: #194AA0;
+	line-height: 4vh;
+	font-family: '方正兰亭黑_GBK Regular';
+	font-weight: bold;
+}
+.page2 .subject p{
+	width: 58%;
+	height: 40px;
+	font-weight: bold;
+	line-height: 40px;
+	color: #194AA0;
+	text-indent: 12px;
+	border: 1px solid #194AA0;
+	margin-left: 22%;
+	margin-top: 6%;
+	font-size: 2.8vh;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	
+	
+}
+.page2 .subject p:first-of-type{
+	margin-top: 8%;
+}
+.hidden{
+	display: none;
+}
+
+.page2 .subject2 p{
+	width: 66%;
+	margin-left: 16%;
+}
+.page2 .subject3 p{
+	width: 46%;
+	margin-left: 22%;
+}
+.page2 .subject5 p{
+	width: 46%;
+	margin-left: 26%;
+}
+.page2 .subject7 p{
+	width: 74%;
+	margin-left: 12%;
+}
+.page2 .subject8 p{
+	width: 74%;
+	margin-left: 12%;
+}
+.page2 .popup{
+	position: absolute;
+	z-index: 100;
+	left: 0;
+	top: 0;
+	margin: auto;
+	width: 100%;
+	height: 100%;
+	background: url(../img/error/zhezhao.png) no-repeat center center;
+	-webkit-background-size: 100% 100%;
+	background-size: 100% 100%;
+}
+.page2 .popup .content{
+	position: absolute;
+	width: 80%;
+	height: 45%;
+	right: 0%;
+	top: 0%;
+	left: 0%;
+	bottom: 0%;
+	margin: auto;
+}
+.page2 .popup .contentBg{
+	width: 100%;
+	height: 100%;
+}
+.page2 .popup .con{
+	width: 30%;
+	position: absolute;
+	z-index: 200;
+	left: 32%;
+	top: 18%;
+}
+.page2 .popup .p1{
+	width: 66%;
+	position: absolute;
+	z-index: 200;
+	top: 54%;
+	left: 16%;
+	color: #0e509d;
+	font-size:5.6vw;
+	text-align: center;
+	font-weight: bold;
+}
+.page2 .popup .p2{
+	width: 66%;
+	position: absolute;
+	z-index: 200;
+	top: 52%;
+	left: 16%;
+	color: red;
+	font-size:5.6vw;
+	text-align: center;
+	font-weight: bold;
+}
+.page2 .popup .p3{
+	width: 66%;
+	position: absolute;
+	z-index: 200;
+	top: 62%;
+	left: 16%;
+	color: #0e509d;
+	font-size:4.62vw;
+	text-align: center;
+	
+}
+.page2 .popup3 .p1{
+	font-size: 7vw;
+	font-weight: bold;
+}
+.page2 .popup .p4{
+	width: 70%;
+	position: absolute;
+	z-index: 200;
+	top: 68%;
+	left: 14%;
+	color: #0e509d;
+	font-size:4.62vw;
+	text-align: center;	
+	font-weight: bold;
+}
+.page2 .popup p span{
+	color: red;
+}
+.page2 .popup .bomBg{
+	width: 80%;
+	position: absolute;
+	z-index: 200;
+	bottom: 10%;
+	left: 8%;
+}
+.page2 .popup .cancelBtm{
+	width: 10%;
+	height: 10%;
+	position: absolute;
+	right: 4%;
+	top: 4.2%;
+	z-index: 200;
+}
+.page2 .popup2 .bomBg{
+	width: 50%;
+	left: 25%;
+	bottom: 14%;
+}
+
+/*...抽奖页....*/
+
+	/* 大转盘样式 */
+
+.page3 .banner {
+	display: block;
+	width: 60%;
+	position: absolute;
+	top: 30%;
+	left: 0;
+	right: 0;
+	margin: auto;
+}
+
+.page3 .banner .turnplate {
+	display: block;
+	width: 100%;
+	position: relative;
+}
+
+.page3 .banner .turnplate canvas.item {
+	width: 100%;
+}
+
+.page3 .banner .turnplate img.pointer {
+	position: absolute;
+	width: 16%;
+	height: 28%;
+	left: 42%;
+	top: 30%;
+}
