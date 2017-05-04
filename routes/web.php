@@ -30,6 +30,7 @@ Route::group(['middleware' => 'wechat.oauth', 'prefix' => 'hs'], function () {
 });
 Route::get('/question','Hs\\QuestionController@index');
 Route::get('/result/{quantity}', 'Hs\\QuestionController@result');
+Route::get('/statistics','Hs\\QuestionController@statistics');
 
 Route::group(['namespace' => 'Vend'], function () {
     //自动贩卖机项目

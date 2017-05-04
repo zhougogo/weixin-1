@@ -19,20 +19,20 @@ class QuestionController extends Controller
     public function result($quantity)
     {
         $user = session('wechat.oauth_user');
-        $openid=Result::where('openid', $user['id']);
-        if ($openid !==null){
+        $openid = Result::where('openid', $user['id']);
+        if ($openid !== null) {
 //            已经答过题了
             return view('hs/fail');
         }
 //        保存信息
-
+        $prize_code = '';
         $prize_code = str_random(5);
         $result = new Result;
-        $result->openid =$user['id'];
-        $result->nickname=$user['nickname'];
-        $result->headimgurl=$user['headimgurl'];
-        $result->quantity=$quantity;
-        $result->prize_code=$prize_code;
+        $result->openid = $user['id'];
+        $result->nickname = $user['nickname'];
+        $result->headimgurl = $user['headimgurl'];
+        $result->quantity = $quantity;
+        $result->prize_code = $prize_code;
         $result->save();
 
 //        根据答对数量返回不同页面
@@ -52,5 +52,11 @@ class QuestionController extends Controller
                 return '请按流程答题！！';
                 break;
         }
+    }
+
+    public function statistics()
+    {
+        $results = Result::all();
+        return view('hs/statistics',compact('results'));
     }
 }
