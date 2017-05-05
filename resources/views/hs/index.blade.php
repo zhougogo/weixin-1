@@ -12,8 +12,8 @@
             <div class="subjectAll">
                 {{--随机选取4道题--}}
                 @foreach($questions as $question)
-                    <div id="id{{$loop->index}}" class="@if(!$loop->first) hidden @endif">
-                        <div class="subject ">
+
+                        <div id="id{{$loop->index}}" class="subject @if(!$loop->first) hidden @endif">
                             <div class="title">
                                 {{$question->titile}}
                             </div>
@@ -24,13 +24,13 @@
                             <p onclick="clickSelect('c','{{$question->answer}}',{{$loop->index}})">
                                 C.{{$question->c}}</p>
                         </div>
-                    </div>
+                    
                 @endforeach
 
             </div>
 
         </div>
-        <div class="popup hidden errPopup">
+        <div class="popup hidden popup1 errPopup">
             <div class="content">
                 <div class="contentBg">
                     <img src="{{asset('img/error/datiBg.png')}}"/>
@@ -95,8 +95,8 @@
         var i = 0;
         function clickSelect(num, answer, index) {
             if (num == answer) {
-                document.getElementById('id' + index).className = 'hidden';
-                document.getElementById('id' + (index + 1)).className = '';
+                document.getElementById('id' + index).className = 'subject hidden';
+                document.getElementById('id' + (index + 1)).className = 'subject';
                 i++;
                 if (index == 3) {
                     window.location.href = '{{url('hs/result')}}' + '/' + i;
@@ -117,10 +117,10 @@
             $(this).addClass('yesClick').siblings().removeClass('yesClick');
 
         })
-        $('.popup .cancelBtm').click(function () {
+        
+        $('.popup1 .cancelBtm').click(function () {
 
-            $(this).parents('.popup').addClass('hidden');
-
+            $('.popup1').css('display','none');
 
         })
     </script>

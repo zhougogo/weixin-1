@@ -49,5 +49,11 @@
 @endsection
 
 @section('script')
+	<script type="application/javascript">
+		$('.popup2 .cancelBtm').click(function () {
 
+            $('.popup2').css('display','none')
+
+        })
+	</script>
 @endsection
