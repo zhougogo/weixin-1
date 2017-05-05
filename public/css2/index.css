@@ -1,23 +1,33 @@
 *{
-	margin: 0;
-	padding: 0;
+	margin: 0px;
+	padding: 0px;
 	outline: none;
-	font-family: '思源黑体';
+	font-family: 'SourceHanSansCN-Medium.otf'; 
 }
+@font-face { 
+  font-family: 'SourceHanSansCN-Medium.otf'; /*这里是说明调用来的字体名字*/ 
+  src: url('../face/SourceHanSansCN-Medium.otf'); /*这里是字体文件路径*/ 
+} 
 
 .all{
-	width: 80%;
+	width: 100%;
 	margin: 0px auto;
-	background: url(../img2/bg.jpg) no-repeat center center;
-	-webkit-background-size: 100% 100%;
-	background-size: 100% 100%;
+	/*background: url(../img2/bg.jpg) no-repeat center center;*/
+	/*-webkit-background-size: 100% 100%;
+	background-size: 100% 100%;*/
 	border: 1px solid transparent;
+	position: relative;
+}
+.bg{
+	width: 100%;
+	position: absolute;
+	z-index: -10;
 }
 form{
 	width: 800px;
 	height: 800px;
 	/*background: white;*/
-	margin:260px 200px;
+	margin:300px 240px;
 }
 form p{
 	font-size: 48px;
@@ -25,18 +35,20 @@ form p{
 	color: #0d0375;
 }
 form div{
-	margin-top: 20px;
+	margin-top: 30px;
+	color: ;
 }
 form div span{
 	width: 180px;
 	display: inline-block;
 	text-align: right;
 	font-size: 36px;
-	font-weight: bold;
+	margin-right: 10px;
+	/*font-weight: bold;*/
 }
 input,select{
 	display: inline-block;
-	width: 480px;
+	width: 580px;
 	height: 40px;
 	line-height: 40px;
 	font-size: 30px;
@@ -44,14 +56,18 @@ input,select{
 }
 select{
 	color: #545454;
+	height: 40px;
 	
 }
+/*.font span{
+	letter-spacing: 20px;
+	}*/
 option{
-	height: 300px;
+	/*height: 300px;*/
 }
 .submit{
 	text-align: center;
-	margin-top: 40px;
+	margin-top: 60px;
 	position: relative;
 	margin-left: 240px;
 }
@@ -64,6 +80,7 @@ option{
 	left: 0px;
 	top: 0px;
 	display: none;
+	text-indent: 10px;
 	
 	
 	
@@ -83,3 +100,44 @@ select option{
 	/*height: 30px;
 	line-height: 30px;*/
 }
+/*.popup{
+	position: fixed;
+	z-index: 30;
+	width: 100%;
+	background-color:rgba(0,0,0,0.7);
+	top: 0px;
+	left: 0px;
+}
+.popup .content{
+	position: absolute;
+	width: 800px;
+	left: 0px;
+	right: 0px;
+	top: 0px;
+	bottom: 0px;
+	margin:340px auto;
+	/*margin: 300px;*/
+}
+/*.popup .content img{
+	width: 800px;
+	float: left;
+}*/*/
+.page2{
+	position: relative;
+	}
+.page2 .container{
+	margin: 760px 500px;
+	width: 397px;
+	/*position: absolute;*/
+	
+}
+.page2 .container p{
+	text-align: center;
+	font-size: 30px;
+	color: #565656;
+	/*font-weight: bold;*/
+	}
+.page2 .container .return{
+	margin-top: 5px;
+	}
+	
