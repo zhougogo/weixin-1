@@ -1,13 +1,13 @@
 @extends('hs.layouts')
 
 @section('content')
-    <div class="page3 page hidden">
+    <div class="page3 page">
         <div class="content">
             <div class="logo">
                 <img src="{{asset('img/p2/ptBg.png')}}"/>
             </div>
             <div class="banner">
-                <div class="turnplate" style="background-image:url(img/turnplate-bg.png);background-size:100% 100%;">
+                <div class="turnplate" style="background-image:url({{asset('img/turnplate-bg.png')}});background-size:100% 100%;">
                     <canvas class="item" id="wheelcanvas" width="422px" height="422px"></canvas>
                     <img class="pointer" src="{{asset('img/turnplate-pointer.png')}}"/>
                 </div>

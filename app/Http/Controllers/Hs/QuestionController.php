@@ -24,9 +24,9 @@ class QuestionController extends Controller
 //            已经答过题了
             return view('hs/fail');
         }
+
 //        保存信息
         $prize_code = '';
-        $prize_code = str_random(5);
         $result = new Result;
         $result->openid = $user['id'];
         $result->nickname = $user['nickname'];
@@ -38,15 +38,15 @@ class QuestionController extends Controller
 //        根据答对数量返回不同页面
         switch ($quantity) {
             case 0:
-                return view('hs/result0');
+                return view('hs/result', compact('quantity'));
                 break;
             case 1:
             case 2:
             case 3:
-                return view('hs/result1');
+                return view('hs/result', compact('quantity'));
                 break;
             case 4:
-                return view('hs/result2');
+                return view('hs/result', compact('quantity'));
                 break;
             default:
                 return '请按流程答题！！';
@@ -54,9 +54,35 @@ class QuestionController extends Controller
         }
     }
 
+    public function draw()
+    {
+        $user = session('wechat.oauth_user');
+        $openid = Result::where('openid', $user['id']);
+        if ($openid !== null) {
+//            已经答过题了
+            return view('hs.fail');
+        }
+
+        //        保存信息
+        $prize_code = '';
+        $rand = mt_rand(0, 100);
+        if ($rand >= 50) {
+            $prize_code = str_random(5);
+        }
+        $result = new Result;
+        $result->openid = $user['id'];
+        $result->nickname = $user['nickname'];
+        $result->headimgurl = $user['headimgurl'];
+        $result->quantity = 4;
+        $result->prize_code = $prize_code;
+        $result->save();
+
+        return view('hs.draw', compact('prize_code'));
+    }
+
     public function statistics()
     {
         $results = Result::all();
-        return view('hs/statistics',compact('results'));
+        return view('hs/statistics', compact('results'));
     }
 }

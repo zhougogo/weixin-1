@@ -27,7 +27,7 @@ Route::group(['middleware' => 'wechat.oauth', 'prefix' => 'hs'], function () {
     });
 });
 Route::get('/welcome', function(){
-    return view('hs/welcome');
+    return view('hs.welcome');
 });
 Route::get('/question','Hs\\QuestionController@index');
 Route::get('/result/{quantity}', 'Hs\\QuestionController@result');

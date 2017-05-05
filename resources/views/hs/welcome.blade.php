@@ -10,7 +10,9 @@
                 <img src="{{asset('img/begin/beginIn.png')}}"/>
             </div>
             <div class="btm">
-                <img src="{{asset('img/begin/beginBtm.png')}}"/>
+                <a href="{{url('hs/question')}}">
+                    <img src="{{asset('img/begin/beginBtm.png')}}"/>
+                </a>
             </div>
         </div>
     </div>
