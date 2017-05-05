@@ -57,7 +57,7 @@
 
             </div>
         </div>
-        <div class="popup popup2 hidden">
+        <!--<div class="popup popup2 hidden">
             <div class="content">
                 <div class="contentBg">
                     <img src="{{asset('img/error/datiBg.png')}}"/>
@@ -69,14 +69,14 @@
                 <p class="p2">恭喜你答对了<span>4</span>题</p>
                 <p class="p3">还获得了抽奖机会</p>
                 <!--<p>很遗憾，正确的答案是<span>B</span></p>-->
-                <div class="bomBg">
+                <!--<div class="bomBg">
                     <img src="{{asset('img/beginBt m.png')}}"/>
                 </div>
                 <div class="cancelBtm">
                     <img src="{{asset('img/error/cancel.png')}}"/>
                 </div>
 
-            </div>
+            </div>-->
         </div>
         <div class="popup popup3 hidden">
             <div class="content">
@@ -133,6 +133,27 @@
 
             </div>
         </div>
+		<div class="page page4 hidden">
+			<div class="logo">
+				<img src="{{asset('img/p2/ptBg.png')}}"/>
+			</div>
+			<div class="content">
+				<img src="{{asset('img/result.png')}}"/>
+			</div>
+		</div>
+		<div class="page page5">
+			<div class="logo">
+				<img src="{{asset('img/p2/ptBg.png')}}"/>
+			</div>
+			<div class="content">
+				<p class="fs">恭喜你答对了<span>3</span>题</p>
+				<p class="aten">更多购买好礼请关注惠氏S-26京东旗舰店</p>
+				<a href="">
+					<img src="asset('img/jd.png')}}"/>
+				</a>
+				<!--<img src="img/result.png"/>-->
+			</div>
+		</div>
 
 
     </div>

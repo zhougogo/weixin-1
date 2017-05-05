@@ -433,3 +433,73 @@ img {
 .visible{
 	display: block;
 }
+.page4 .content{
+	width: 84%;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	height: 34%;
+}
+.page4 .logo{
+	position: absolute;
+	width: 26%;
+	left: 0;
+	right: 0;
+	margin: auto;
+	top: 5%;
+}
+.page5 .content{
+	width: 84%;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	height: 40%;
+	background-color: white;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+}
+.page5 .content .fs{
+	text-align: center;
+	font-size: 8vw;
+	margin-top: 10%;
+	color: red;
+}
+.page5 .content .aten{
+	text-align: center;
+	font-size: 6vw;
+	/*margin-top: 14%;*/
+	color: #0D529D;
+	padding: 10%;
+}
+.page5 .content a{
+	display: block;
+	width: 40%;
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin: auto;
+	top: 60%;
+}
+.page5 .content a img{
+	/*border: 1px solid #0D529D;*/
+	padding: 5%;
+	-webkit-box-shadow: 0px 0px 1px 1px #0D529D;
+	-moz-box-shadow: 0px 0px 1px 1px #0D529D;
+	box-shadow: 0px 0px 1px 1px #0D529D;
+	
+}
+.page5 .logo{
+	position: absolute;
+	width: 26%;
+	left: 0;
+	right: 0;
+	margin: auto;
+	top: 5%;
+}
