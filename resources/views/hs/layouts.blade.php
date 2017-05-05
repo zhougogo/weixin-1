@@ -13,17 +13,14 @@
     <link rel="stylesheet" href="{{asset('css/index.css')}}"/>
     <script type="text/javascript" src="{{asset('js/jquery-1.10.2.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/awardRotate.js')}}"></script>
-    <script src="{{asset('js/z.js')}}" type="text/javascript" charset="utf-8"></script>
 </head>
 
 <body>
 @yield('content')
 
 </body>
-</body>
-<script src="{{asset('js/index.js')}}" type="text/javascript" charset="utf-8"></script>
+
 
 @yield('script')
 
-</html>
 </html>

@@ -64,11 +64,12 @@ class QuestionController extends Controller
         }
 
         //        保存信息
-        $prize_code = '';
-        $rand = mt_rand(0, 100);
-        if ($rand >= 50) {
-            $prize_code = str_random(5);
-        }
+//        $prize_code = '';
+//        $rand = mt_rand(0, 100);
+//        if ($rand >= 50) {
+//            $prize_code = str_random(5);
+//        }
+        $prize_code = str_random(5);
         $result = new Result;
         $result->openid = $user['id'];
         $result->nickname = $user['nickname'];
