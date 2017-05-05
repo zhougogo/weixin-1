@@ -1,0 +1,85 @@
+*{
+	margin: 0;
+	padding: 0;
+	outline: none;
+	font-family: '思源黑体';
+}
+
+.all{
+	width: 80%;
+	margin: 0px auto;
+	background: url(../img2/bg.jpg) no-repeat center center;
+	-webkit-background-size: 100% 100%;
+	background-size: 100% 100%;
+	border: 1px solid transparent;
+}
+form{
+	width: 800px;
+	height: 800px;
+	/*background: white;*/
+	margin:260px 200px;
+}
+form p{
+	font-size: 48px;
+	font-weight: bold;
+	color: #0d0375;
+}
+form div{
+	margin-top: 20px;
+}
+form div span{
+	width: 180px;
+	display: inline-block;
+	text-align: right;
+	font-size: 36px;
+	font-weight: bold;
+}
+input,select{
+	display: inline-block;
+	width: 480px;
+	height: 40px;
+	line-height: 40px;
+	font-size: 30px;
+	
+}
+select{
+	color: #545454;
+	
+}
+option{
+	height: 300px;
+}
+.submit{
+	text-align: center;
+	margin-top: 40px;
+	position: relative;
+	margin-left: 240px;
+}
+.submit input{
+	width: 200px;
+	height: 40px;
+	line-height: 60px;
+	/*position: relative;*/
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	display: none;
+	
+	
+	
+}
+
+/*.sec{
+	height: 500px;
+}*/
+label img{
+	width: 260px;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: 10;
+}
+select option{
+	/*height: 30px;
+	line-height: 30px;*/
+}
