@@ -53,7 +53,7 @@
         $(document).ready(function() {
             //动态添加大转盘的奖品与奖品区域背景颜色
             turnplate.restaraunts = ["安卓/IOS两用数据线", "唇彩移动电源", "生活储物三件套", "先知感温杯哦"];
-            turnplate.colors = ["#ffc43e", "#F8CD5A", "#ffc43e", "#F8CD5A", "#ffc43e", "#F8CD5A", "#ffc43e", "#F8CD5A"];
+            turnplate.colors = ["#ffc43e", "#F8CD5A", "#ffc43e", "#F8CD5A"];
 //	 turnplate.colors =
             var rotateTimeOut = function() {
                 $('#wheelcanvas').rotate({
@@ -81,7 +81,10 @@
                     duration: 8000,
                     callback: function() {
                     	$('.page3 .popup').css('display','block');
-//				alert(txt);
+                    	
+                    	$('.page3 .popup .shong span').html(txt);
+                    	
+		//				alert(txt);
 //                        turnplate.bRotate = !turnplate.bRotate;
                     }
                 });
@@ -165,21 +168,21 @@
                         for(var j = 0; j < texts.length; j++) {
 //                          ctx.font = j == 0 ? 'bold 40px' : '40px';
                             if(j == 0) {
-                                ctx.fillText(texts[j] + "M", 20, j * line_height);
+                                ctx.fillText(texts[j] + "M", 40, j * line_height);
                             } else {
-                                ctx.fillText(texts[j],20, j * line_height);
+                                ctx.fillText(texts[j],40, j * line_height);
                             }
                         }
                     } else if(text.indexOf("M") == -1 && text.length > 6) { //奖品名称长度超过一定范围
                         text = text.substring(0, 6) + "||" + text.substring(6);
                         var texts = text.split("||");
                         for(var j = 0; j < texts.length; j++) {
-                            ctx.fillText(texts[j], 20, j * line_height);
+                            ctx.fillText(texts[j], 40, j * line_height);
                         }
                     } else {
                         //在画布上绘制填色的文本。文本的默认颜色是黑色
                         //measureText()方法返回包含一个对象，该对象包含以像素计的指定字体宽度
-                        ctx.fillText(text, 20, 0);
+                        ctx.fillText(text, 40, 0);
                     }
                     //把当前画布返回（调整）到上一个save()状态之前
                     ctx.restore();

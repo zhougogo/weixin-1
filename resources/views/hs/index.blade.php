@@ -92,6 +92,7 @@
 
 @section('script')
     <script type="application/javascript">
+    	
         var i = 0;
         function clickSelect(num, answer, index) {
             if (num == answer) {
