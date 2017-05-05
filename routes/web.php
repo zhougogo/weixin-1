@@ -17,6 +17,12 @@ Route::get('/test', function () {
 });
 
 /**
+ * vip提供vip用户注册页面(徐芳)
+ */
+Route::get('/vip','Vip\\VipController@index');
+Route::post('/vip/create','Vip\\VipController@create');
+
+/**
  * 惠氏答题活动
  */
 Route::group(['middleware' => 'wechat.oauth', 'prefix' => 'hs'], function () {
