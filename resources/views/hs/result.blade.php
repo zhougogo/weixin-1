@@ -8,7 +8,7 @@
             </div>
             <div class="content">
                 @if($quantity==0)
-                    <p class="fs">恭喜你答对了<span>{{$quantity}}</span>题</p>
+                    <p class="fs">很遗憾答对了<span>{{$quantity}}</span>题</p>
                 @else
                     <p class="fs">恭喜你答对了<span>{{$quantity}}</span>题</p>
                 @endif
