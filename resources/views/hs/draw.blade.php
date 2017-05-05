@@ -80,6 +80,7 @@
                     animateTo: angles + 1800,
                     duration: 8000,
                     callback: function() {
+                    	$('.page3 .popup').css('display','block');
 //				alert(txt);
 //                        turnplate.bRotate = !turnplate.bRotate;
                     }
@@ -101,6 +102,11 @@
                 rotateFn(item, turnplate.restaraunts[item - 1]);
 
             });
+            	$('.page3 .popup .cancel').click(function(){
+		
+					$('.page3 .popup').css('display','none');
+					
+				})
         });
 
         function rnd(n, m) {
@@ -125,7 +131,7 @@
                 //strokeStyle 属性设置或返回用于笔触的颜色、渐变或模式
                 ctx.strokeStyle = "#FFBE04";
                 //font 属性设置或返回画布上文本内容的当前字体属性
-                ctx.font = '16px Microsoft YaHei';
+                ctx.font = '26px Microsoft YaHei';
                 for(var i = 0; i < turnplate.restaraunts.length; i++) {
                     var angle = turnplate.startAngle + i * arc;
                     ctx.fillStyle = turnplate.colors[i];
