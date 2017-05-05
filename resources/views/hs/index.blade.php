@@ -44,7 +44,7 @@
 
             </div>
         </div>
-        <div class="popup popup2 hidden">
+        <!--<div class="popup popup2 hidden">
             <div class="content">
                 <div class="contentBg">
                     <img src="{{asset('img/error/datiBg.png')}}"/>
@@ -55,7 +55,7 @@
                 </div>
                 <p class="p2">恭喜你答对了<span>4</span>题</p>
                 <p class="p3">还获得了抽奖机会</p>
-                <!--<p>很遗憾，正确的答案是<span>B</span></p>-->
+
                 <div class="bomBg">
                     <img src="{{asset('img/beginBt m.png')}}"/>
                 </div>
@@ -76,73 +76,14 @@
                 </div>
                 <p class="p1">很遗憾!</p>
                 <p class="p4">你离瑞士还有三道题的距离继续努力</p>
-                <!--<div class="bomBg">
-                    <img src="img/win/f2.png"/>
-                </div>-->
-                <div class="cancelBtm">
+				<div class="cancelBtm">
                     <img src="{{asset('img/error/cancel.png')}}"/>
                 </div>
 
             </div>
-        </div>
+        </div>-->
     </div>
-    <div class="page3 page hidden">
-        <div class="content">
-            <div class="logo">
-                <img src="{{asset('img/p2/ptBg.png')}}"/>
-            </div>
-            <div class="banner">
-                <div class="turnplate" style="background-image:url(img/turnplate-bg.png);background-size:100% 100%;">
-                    <canvas class="item" id="wheelcanvas" width="422px" height="422px"></canvas>
-                    <img class="pointer" src="{{asset('img/turnplate-pointer.png')}}"/>
-                </div>
-            </div>
-            <div class="btm beginBtm">
-                <img src="{{asset('img/beginBtm.png')}}"/>
-            </div>
-        </div>
 
-        <div class="popup hidden">
-            <div class="container">
-                <div class="num">
-                    <div class="numBg">
-                        <img src="{{asset('img/cBg.png')}}"/>
-                    </div>
-                    <p>中奖码</p>
-                    <span>12345</span>
-                </div>
-                <p class="shong">恭喜你抽中了<span>未知</span>奖品</p>
-                <p class="getNum">请凭此号码去工作人员处领取奖品。</p>
-                <div class="cancel">
-                    <img src="{{asset('img/error/cancel.png')}}"/>
-                </div>
-
-
-            </div>
-        </div>
-        <div class="page page4 hidden">
-            <div class="logo">
-                <img src="{{asset('img/p2/ptBg.png')}}"/>
-            </div>
-            <div class="content">
-                <img src="{{asset('img/result.png')}}"/>
-            </div>
-        </div>
-        <div class="page page5 hidden">
-            <div class="logo">
-                <img src="{{asset('img/p2/ptBg.png')}}"/>
-            </div>
-            <div class="content">
-                <p class="fs">恭喜你答对了<span>3</span>题</p>
-                <p class="aten">更多购买好礼请关注惠氏S-26京东旗舰店</p>
-                <a href="">
-                    <img src="asset('img/jd.png')}}"/>
-                </a>
-                <!--<img src="img/result.png"/>-->
-            </div>
-        </div>
-
-    </div>
 @endsection
 
 @section('script')
