@@ -92,7 +92,7 @@
         function clickSelect(num,answer,index) {
             if (num==answer){
                 document.getElementById('id'+index).className='hidden';
-                document.getElementById('id'+index+1).className='';
+                document.getElementById('id'+(index+1)).className='';
                 i++;
                 if (index == 3){
                     window.location.href='{{url('hs/result')}}'+'/'+i;
