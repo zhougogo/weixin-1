@@ -31,7 +31,7 @@ class QuestionController extends Controller
             $result = new Result;
             $result->openid = $user['id'];
             $result->nickname = $user['nickname'];
-            $result->headimgurl = $user['headimgurl'];
+            $result->headimgurl = $user['avatar'];
             $result->quantity = $quantity;
             $result->prize_code = $prize_code;
             $result->save();
@@ -76,7 +76,7 @@ class QuestionController extends Controller
         $result = new Result;
         $result->openid = $user['id'];
         $result->nickname = $user['nickname'];
-        $result->headimgurl = $user['headimgurl'];
+        $result->headimgurl = $user['avatar'];
         $result->quantity = 4;
         $result->prize_code = $prize_code;
         $result->save();

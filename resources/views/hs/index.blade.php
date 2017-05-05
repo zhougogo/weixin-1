@@ -1,7 +1,7 @@
 @extends('hs.layouts')
 
 @section('content')
-    <div class="page page2 hidden">
+    <div class="page page2">
         <div class="logo">
             <img src="{{asset('img/p2/ptBg.png')}}"/>
         </div>
@@ -15,7 +15,7 @@
 
                         <div id="id{{$loop->index}}" class="subject @if(!$loop->first) hidden @endif">
                             <div class="title">
-                                {{$question->titile}}
+                                {{$question->title}}
                             </div>
                             <p onclick="clickSelect('a','{{$question->answer}}',{{$loop->index}})">
                                 A.{{$question->a}}</p>
@@ -95,12 +95,14 @@
         var i = 0;
         function clickSelect(num, answer, index) {
             if (num == answer) {
-                document.getElementById('id' + index).className = 'subject hidden';
-                document.getElementById('id' + (index + 1)).className = 'subject';
                 i++;
                 if (index == 3) {
                     window.location.href = '{{url('hs/result')}}' + '/' + i;
                 }
+                document.getElementById('id' + index).className = 'subject hidden';
+                document.getElementById('id' + (index + 1)).className = 'subject';
+
+
             } else {
                 if (index == 3) {
                     window.location.href = '{{url('hs/result')}}' + '/' + i;
