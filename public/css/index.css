@@ -121,14 +121,14 @@ img {
 }
 
 .page2 .subject p {
-	width: 58%;
+	width: 88%;
 	height: 40px;
 	font-weight: bold;
 	line-height: 40px;
 	color: #194AA0;
 	text-indent: 12px;
 	border: 1px solid #194AA0;
-	margin-left: 22%;
+	margin-left: 8%;
 	margin-top: 6%;
 	font-size: 2.8vh;
 	-webkit-border-radius: 5px;
@@ -144,31 +144,31 @@ img {
 	display: none;
 }
 
-.page2 .subject2 p {
+/*.page2 .subject2 p {
 	width: 76%;
 	margin-left: 16%;
-}
+}*/
 
-.page2 .subject3 p {
+/*.page2 .subject3 p {
 	width: 46%;
 	margin-left: 22%;
-}
+}*/
 
-.page2 .subject5 p {
+/*.page2 .subject5 p {
 	width: 46%;
 	margin-left: 26%;
-}
+}*/
 
-.page2 .subject7 p {
+/*.page2 .subject p {
 	width: 88%;
 	margin-left: 8%;
-}
+}*/
 
-.page2 .subject8 p {
+/*.page2 .subject8 p {
 	width: 82%;
 	margin-left: 12%;
 	color: transparent;
-}
+}*/
 
 .page2 .popup {
 	position: absolute;
@@ -502,4 +502,9 @@ img {
 	right: 0;
 	margin: auto;
 	top: 5%;
+}
+.yesClick{
+	background-image:url(../img/p2/bgBtm.png);
+	-webkit-background-size: 120% 120%;
+	background-size: 120% 120%;
 }

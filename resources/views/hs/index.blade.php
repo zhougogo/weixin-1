@@ -26,7 +26,7 @@
             </div>
 
         </div>
-        <div class="popup hidden">
+        <div class="popup hidden errPopup">
             <div class="content">
                 <div class="contentBg">
                     <img src="{{asset('img/error/datiBg.png')}}"/>
@@ -102,9 +102,22 @@
                     window.location.href='{{url('hs/result')}}'+'/'+i;
                 }
 //                弹出模态框
+				document.getElementsByClassName('errPopup')[0].style.display = 'block';
+				
                 document.getElementById("answer").innerHTML=answer;
 
             }
         }
+        $('.subject p').click(function(){
+	
+			$(this).addClass('yesClick').siblings().removeClass('yesClick');
+			
+		})
+		$('.popup .cancelBtm').click(function(){
+			
+			$(this).parents('.popup').addClass('hidden');
+		
+		
+		})
     </script>
 @endsection
