@@ -52,7 +52,7 @@
 
         $(document).ready(function() {
             //动态添加大转盘的奖品与奖品区域背景颜色
-            turnplate.restaraunts = ["奖品1", "奖品2", "奖品3", "奖品4", "奖品5", "奖品6", "奖品7", "奖品8" ];
+            turnplate.restaraunts = ["安卓/IOS两用数据线", "唇彩移动电源", "生活储物三件套", "先知感温杯哦"];
             turnplate.colors = ["#ffc43e", "#F8CD5A", "#ffc43e", "#F8CD5A", "#ffc43e", "#F8CD5A", "#ffc43e", "#F8CD5A"];
 //	 turnplate.colors =
             var rotateTimeOut = function() {
