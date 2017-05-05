@@ -67,11 +67,16 @@ class QuestionController extends Controller
         }
 
         //        保存信息
-//        $prize_code = '';
-//        $rand = mt_rand(0, 100);
-//        if ($rand >= 50) {
-//            $prize_code = str_random(5);
-//        }
+        $rand = mt_rand(0, 100);
+        if ($rand < 25) {
+            $prize = 1;
+        } elseif ($rand >= 25 && $rand < 50) {
+            $prize = 2;
+        } elseif ($rand >= 50 && $rand < 75) {
+            $prize = 3;
+        } else {
+            $prize = 4;
+        }
         $prize_code = str_random(5);
         $result = new Result;
         $result->openid = $user['id'];
@@ -81,7 +86,7 @@ class QuestionController extends Controller
         $result->prize_code = $prize_code;
         $result->save();
 
-        return view('hs.draw', compact('prize_code'));
+        return view('hs.draw', compact('prize_code', 'prize'));
     }
 
     public function statistics()
