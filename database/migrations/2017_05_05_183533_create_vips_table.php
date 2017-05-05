@@ -15,14 +15,14 @@ class CreateVipsTable extends Migration
     {
         Schema::create('vips', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->string('company');
-            $table->string('job');
-            $table->string('phone');
-            $table->string('email');
-            $table->string('province');
-            $table->string('trade');
-            $table->string('identity');
+            $table->string('name')->nullable();
+            $table->string('company')->nullable();
+            $table->string('job')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('email')->nullable();
+            $table->string('province')->nullable();
+            $table->string('trade')->nullable();
+            $table->string('identity')->nullable();
             $table->timestamps();
         });
     }
