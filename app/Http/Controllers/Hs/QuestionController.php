@@ -19,21 +19,24 @@ class QuestionController extends Controller
     public function result($quantity)
     {
         $user = session('wechat.oauth_user');
-        $openid = Result::where('openid', $user['id']);
+        $openid = Result::where('openid', $user['id'])->first();
         if ($openid !== null) {
 //            已经答过题了
             return view('hs/fail');
         }
 
 //        保存信息
-        $prize_code = '';
-        $result = new Result;
-        $result->openid = $user['id'];
-        $result->nickname = $user['nickname'];
-        $result->headimgurl = $user['headimgurl'];
-        $result->quantity = $quantity;
-        $result->prize_code = $prize_code;
-        $result->save();
+        if ($quantity < 4) {
+            $prize_code = '';
+            $result = new Result;
+            $result->openid = $user['id'];
+            $result->nickname = $user['nickname'];
+            $result->headimgurl = $user['headimgurl'];
+            $result->quantity = $quantity;
+            $result->prize_code = $prize_code;
+            $result->save();
+        }
+
 
 //        根据答对数量返回不同页面
         switch ($quantity) {
@@ -57,7 +60,7 @@ class QuestionController extends Controller
     public function draw()
     {
         $user = session('wechat.oauth_user');
-        $openid = Result::where('openid', $user['id']);
+        $openid = Result::where('openid', $user['id'])->first();
         if ($openid !== null) {
 //            已经答过题了
             return view('hs.fail');

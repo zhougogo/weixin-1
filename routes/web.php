@@ -20,18 +20,18 @@ Route::get('/test', function () {
  * 惠氏答题活动
  */
 Route::group(['middleware' => 'wechat.oauth', 'prefix' => 'hs'], function () {
-
+    Route::get('/welcome', function(){
+        return view('hs.welcome');
+    });
+    Route::get('/question','Hs\\QuestionController@index');
+    Route::get('/result/{quantity}', 'Hs\\QuestionController@result');
+    Route::get('/statistics','Hs\\QuestionController@statistics');
+    Route::get('/draw','Hs\\QuestionController@draw');
     Route::get('/user', function () {
         $user = session('wechat.oauth_user');
         dd($user);
     });
 });
-Route::get('/welcome', function(){
-    return view('hs.welcome');
-});
-Route::get('/question','Hs\\QuestionController@index');
-Route::get('/result/{quantity}', 'Hs\\QuestionController@result');
-Route::get('/statistics','Hs\\QuestionController@statistics');
 
 Route::group(['namespace' => 'Vend'], function () {
     //自动贩卖机项目

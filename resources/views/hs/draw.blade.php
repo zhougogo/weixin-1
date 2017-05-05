@@ -103,9 +103,9 @@
 
             });
             	$('.page3 .popup .cancel').click(function(){
-		
+
 					$('.page3 .popup').css('display','none');
-					
+
 				})
         });
 

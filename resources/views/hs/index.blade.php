@@ -13,14 +13,18 @@
                 {{--随机选取4道题--}}
                 @foreach($questions as $question)
                     <div id="id{{$loop->index}}" class="@if(!$loop->first) hidden @endif">
-                    <div  class="subject ">
-                        <div class="title">
-                            {{$question->titile}}
+                        <div class="subject ">
+                            <div class="title">
+                                {{$question->titile}}
+                            </div>
+                            <p onclick="clickSelect('a','{{$question->answer}}',{{$loop->index}})">
+                                A.{{$question->a}}</p>
+                            <p onclick="clickSelect('b','{{$question->answer}}',{{$loop->index}})">
+                                B.{{$question->b}}</p>
+                            <p onclick="clickSelect('c','{{$question->answer}}',{{$loop->index}})">
+                                C.{{$question->c}}</p>
                         </div>
-                        <p onclick="clickSelect('a','{{$question->answer}}',{{$loop->index}})">A.{{$question->a}}</p>
-                        <p onclick="clickSelect('b','{{$question->answer}}',{{$loop->index}})">B.{{$question->b}}</p>
-                        <p onclick="clickSelect('c','{{$question->answer}}',{{$loop->index}})">C.{{$question->c}}</p>
-                    </div></div>
+                    </div>
                 @endforeach
 
             </div>
@@ -44,7 +48,7 @@
 
             </div>
         </div>
-        <!--<div class="popup popup2 hidden">
+    <!--<div class="popup popup2 hidden">
             <div class="content">
                 <div class="contentBg">
                     <img src="{{asset('img/error/datiBg.png')}}"/>
@@ -88,36 +92,36 @@
 
 @section('script')
     <script type="application/javascript">
-        var i=0;
-        function clickSelect(num,answer,index) {
-            if (num==answer){
-                document.getElementById('id'+index).className='hidden';
-                document.getElementById('id'+(index+1)).className='';
+        var i = 0;
+        function clickSelect(num, answer, index) {
+            if (num == answer) {
+                document.getElementById('id' + index).className = 'hidden';
+                document.getElementById('id' + (index + 1)).className = '';
                 i++;
-                if (index == 3){
-                    window.location.href='{{url('hs/result')}}'+'/'+i;
+                if (index == 3) {
+                    window.location.href = '{{url('hs/result')}}' + '/' + i;
                 }
-            }else {
-                if (index == 3){
-                    window.location.href='{{url('hs/result')}}'+'/'+i;
+            } else {
+                if (index == 3) {
+                    window.location.href = '{{url('hs/result')}}' + '/' + i;
                 }
 //                弹出模态框
-				document.getElementsByClassName('errPopup')[0].style.display = 'block';
-				
-                document.getElementById("answer").innerHTML=answer;
+                document.getElementsByClassName('errPopup')[0].style.display = 'block';
+
+                document.getElementById("answer").innerHTML = answer;
 
             }
         }
-        $('.subject p').click(function(){
-	
-			$(this).addClass('yesClick').siblings().removeClass('yesClick');
-			
-		})
-		$('.popup .cancelBtm').click(function(){
-			
-			$(this).parents('.popup').addClass('hidden');
-		
-		
-		})
+        $('.subject p').click(function () {
+
+            $(this).addClass('yesClick').siblings().removeClass('yesClick');
+
+        })
+        $('.popup .cancelBtm').click(function () {
+
+            $(this).parents('.popup').addClass('hidden');
+
+
+        })
     </script>
 @endsection
