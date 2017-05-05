@@ -40,7 +40,9 @@
                 </div>
                 <p class="p1">很遗憾，正确的答案是<span id="answer">B</span></p>
                 <div class="bomBg">
-                    <img src="{{asset('img/win/f2.png')}}"/>
+                    <a href="http://coupon.m.jd.com/coupons/show.action?key=01be87ffecc74045848d7cd299eb292a&roleId=6405081&to=sale.jd.com/m/act/sbtJUVC3NlgfI.html">
+                        <img src="{{asset('img/win/f2.png')}}"/>
+                    </a>
                 </div>
                 <div class="cancelBtm">
                     <img src="{{asset('img/error/cancel.png')}}"/>

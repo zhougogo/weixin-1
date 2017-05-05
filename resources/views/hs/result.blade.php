@@ -9,7 +9,7 @@
             <div class="content">
                 <p class="fs">恭喜你答对了<span>{{$quantity}}</span>题</p>
                 <p class="aten">更多购买好礼请关注惠氏S-26京东旗舰店</p>
-                <a href="">
+                <a href="http://coupon.m.jd.com/coupons/show.action?key=01be87ffecc74045848d7cd299eb292a&roleId=6405081&to=sale.jd.com/m/act/sbtJUVC3NlgfI.html">
                     <img src="{{asset('img/jd.png')}}"/>
                 </a>
                 <!--<img src="img/result.png"/>-->
