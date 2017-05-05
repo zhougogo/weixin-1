@@ -129,7 +129,11 @@
                 //在给定矩形内清空一个矩形
                 ctx.clearRect(0, 0, 422, 422);
                 //strokeStyle 属性设置或返回用于笔触的颜色、渐变或模式
-                ctx.strokeStyle = "#FFBE04";
+                ctx.strokeStyle = "#DD7B0D";
+                
+                ctx.textAlign = "center";
+
+				ctx.textBaseline = "middle";
                 //font 属性设置或返回画布上文本内容的当前字体属性
                 ctx.font = '26px Microsoft YaHei';
                 for(var i = 0; i < turnplate.restaraunts.length; i++) {
@@ -145,7 +149,7 @@
                     ctx.save();
 
                     //----绘制奖品开始----
-                    ctx.fillStyle = "#dc770c";
+                    ctx.fillStyle = "#E29028";
                     var text = turnplate.restaraunts[i];
 
                     var line_height = 17;
@@ -153,29 +157,29 @@
                     ctx.translate(211 + Math.cos(angle + arc / 2) * turnplate.textRadius, 211 + Math.sin(angle + arc / 2) * turnplate.textRadius);
 
                     //rotate方法旋转当前的绘图
-                    ctx.rotate(angle + arc / 2 + Math.PI / 2);
+                    ctx.rotate(angle + arc / 2 + Math.PI);
 
                     /** 下面代码根据奖品类型、奖品名称长度渲染不同效果，如字体、颜色、图片效果。(具体根据实际情况改变) **/
                     if(text.indexOf("M") > 0) { //流量包
                         var texts = text.split("M");
                         for(var j = 0; j < texts.length; j++) {
-                            ctx.font = j == 0 ? 'bold 40px' : '40px';
+//                          ctx.font = j == 0 ? 'bold 40px' : '40px';
                             if(j == 0) {
-                                ctx.fillText(texts[j] + "M", -ctx.measureText(texts[j] + "M").width / 2, j * line_height);
+                                ctx.fillText(texts[j] + "M", 20, j * line_height);
                             } else {
-                                ctx.fillText(texts[j], -ctx.measureText(texts[j]).width / 2, j * line_height);
+                                ctx.fillText(texts[j],20, j * line_height);
                             }
                         }
                     } else if(text.indexOf("M") == -1 && text.length > 6) { //奖品名称长度超过一定范围
                         text = text.substring(0, 6) + "||" + text.substring(6);
                         var texts = text.split("||");
                         for(var j = 0; j < texts.length; j++) {
-                            ctx.fillText(texts[j], -ctx.measureText(texts[j]).width / 2, j * line_height);
+                            ctx.fillText(texts[j], 20, j * line_height);
                         }
                     } else {
                         //在画布上绘制填色的文本。文本的默认颜色是黑色
                         //measureText()方法返回包含一个对象，该对象包含以像素计的指定字体宽度
-                        ctx.fillText(text, -ctx.measureText(text).width / 2, 0);
+                        ctx.fillText(text, 20, 0);
                     }
                     //把当前画布返回（调整）到上一个save()状态之前
                     ctx.restore();
