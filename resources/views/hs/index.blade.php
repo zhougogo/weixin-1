@@ -12,15 +12,15 @@
             <div class="subjectAll">
                 {{--随机选取4道题--}}
                 @foreach($questions as $question)
-                    <div class="subject subject{{$loop->index}} hidden">
+                    <div id="id{{$loop->index}}" class="@if(!$loop->first) hidden @endif">
+                    <div  class="subject ">
                         <div class="title">
                             {{$question->titile}}
                         </div>
-                        <p>A.{{$question->a}}</p>
-                        <p>B.{{$question->b}}</p>
-                        <p>C.{{$question->c}}</p>
-                        <p class="hidden">正确答案:{{$question->answer}}</p>
-                    </div>
+                        <p onclick="clickSelect('a','{{$question->answer}}',{{$loop->index}})">A.{{$question->a}}</p>
+                        <p onclick="clickSelect('b','{{$question->answer}}',{{$loop->index}})">B.{{$question->b}}</p>
+                        <p onclick="clickSelect('c','{{$question->answer}}',{{$loop->index}})">C.{{$question->c}}</p>
+                    </div></div>
                 @endforeach
 
             </div>
@@ -34,7 +34,7 @@
                 <div class="con">
                     <img src="{{asset('img/cancel.png')}}"/>
                 </div>
-                <p class="p1">很遗憾，正确的答案是<span>B</span></p>
+                <p class="p1">很遗憾，正确的答案是<span id="answer">B</span></p>
                 <div class="bomBg">
                     <img src="{{asset('img/win/f2.png')}}"/>
                 </div>
@@ -88,6 +88,23 @@
 
 @section('script')
     <script type="application/javascript">
+        var i=0;
+        function clickSelect(num,answer,index) {
+            if (num==answer){
+                document.getElementById('id'+index).className='hidden';
+                document.getElementById('id'+index+1).className='';
+                i++;
+                if (index == 3){
+                    window.location.href='{{url('hs/result')}}'+'/'+i;
+                }
+            }else {
+                if (index == 3){
+                    window.location.href='{{url('hs/result')}}'+'/'+i;
+                }
+//                弹出模态框
+                document.getElementById("answer").innerHTML=answer;
 
+            }
+        }
     </script>
 @endsection
