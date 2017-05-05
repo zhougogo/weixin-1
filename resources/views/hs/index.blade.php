@@ -112,7 +112,8 @@
                 document.getElementsByClassName('errPopup')[0].style.display = 'block';
 
                 document.getElementById("answer").innerHTML = answer;
-
+                document.getElementById('id' + index).className = 'subject hidden';
+                document.getElementById('id' + (index + 1)).className = 'subject';
             }
         }
         $('.subject p').click(function () {
