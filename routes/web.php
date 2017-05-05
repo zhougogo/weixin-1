@@ -20,13 +20,14 @@ Route::get('/test', function () {
  * 惠氏答题活动
  */
 Route::group(['middleware' => 'wechat.oauth', 'prefix' => 'hs'], function () {
-    Route::get('/', function(){
-        return view('hs/welcome');
-    });
+
     Route::get('/user', function () {
         $user = session('wechat.oauth_user');
         dd($user);
     });
+});
+Route::get('/welcome', function(){
+    return view('hs/welcome');
 });
 Route::get('/question','Hs\\QuestionController@index');
 Route::get('/result/{quantity}', 'Hs\\QuestionController@result');
