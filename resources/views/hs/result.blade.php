@@ -7,10 +7,14 @@
                 <img src="{{asset('img/p2/ptBg.png')}}"/>
             </div>
             <div class="content">
-                <p class="fs">恭喜你答对了<span>{{$quantity}}</span>题</p>
-                <p class="aten">更多购买好礼请关注惠氏S-26京东旗舰店</p>
+                @if($quantity==0)
+                    <p class="fs">恭喜你答对了<span>{{$quantity}}</span>题</p>
+                @else
+                    <p class="fs">恭喜你答对了<span>{{$quantity}}</span>题</p>
+                @endif
+                <p class="aten">您有一份来自京东惠氏店铺的好礼，等待点击领取！</p>
                 <a href="http://coupon.m.jd.com/coupons/show.action?key=01be87ffecc74045848d7cd299eb292a&roleId=6405081&to=sale.jd.com/m/act/sbtJUVC3NlgfI.html">
-                    <img src="{{asset('img/jd.png')}}"/>
+                    <img src="{{asset('img/get.png')}}" alt="">
                 </a>
                 <!--<img src="img/result.png"/>-->
             </div>
@@ -49,11 +53,11 @@
 @endsection
 
 @section('script')
-	<script type="application/javascript">
-		$('.popup2 .cancelBtm').click(function () {
+    <script type="application/javascript">
+        $('.popup2 .cancelBtm').click(function () {
 
-            $('.popup2').css('display','none')
+            $('.popup2').css('display', 'none')
 
         })
-	</script>
+    </script>
 @endsection
