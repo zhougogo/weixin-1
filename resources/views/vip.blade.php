@@ -112,6 +112,6 @@
 		</div>
 		
 	</body>
-	<script src="js2/jquery-1.10.2.js" type="text/javascript" charset="utf-8"></script>
-	<!--<script src="js2/index.js" type="text/javascript" charset="utf-8"></script>-->
+	<script src="{{asset('js2/jquery-1.10.2.js')}}" type="text/javascript" charset="utf-8"></script>
+	<script src="{{asset('js2/index.js')}}" type="text/javascript" charset="utf-8"></script>
 </html>
