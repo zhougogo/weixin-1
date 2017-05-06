@@ -1,9 +1,15 @@
-var clientHeight = $(window).height() ;
+	bodySize();
+	function bodySize(){
+		var WinWidth = window.screen.width;
+		console.log(WinWidth);
+		document.body.style.width = WinWidth + "px";
+		// var WinHeight = window.innerHeight;
+		// var bodyWidth = document.defaultView.getComputedStyle(document.body,null).width;
+		// if(parseFloat(bodyHeight) < WinHeight){
+		// 	document.body.style.width = bodyWidth + "px";
+		// }
+	}
 
-var clientWidth = $(window).width();
-//
-//
-$('.popup').css('height',clientHeight);
 
 //$('.all').css('width',clientWidth*8/10);
 //console.log(123);
@@ -15,21 +21,4 @@ $('.popup').css('height',clientHeight);
 ////	console.log(123);
 //	
 //})
-count();
-function count(){
-	
-	var num = 30;
-	var timer = setInterval(function(){
-		num--;
-		$('.page2 .container .count span').html(num);
-		
-		if(num<=0){
-			window.location.href = 'http://www.dtdream.com/';
-			clearInterval(timer);
-		}
-	},1000)
-	
-	$('.page2 .container .return').click(function(){
-		window.location.href = 'http://www.dtdream.com/';
-	})
-}
+
