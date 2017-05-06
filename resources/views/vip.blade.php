@@ -6,7 +6,7 @@
 		<link rel="stylesheet" href="{{asset('css2/index.css')}}" />
 	</head>
 	<body>
-		<div class="all">
+		<div class="all page1">
 			<div class="header">
 				<img src="{{asset('img2/header.jpg')"/>
 			</div>

@@ -37,14 +37,14 @@
 	background-size: 100% 100%;
 	margin-top: -10px;
 }
-.erweima{
+.page1 .erweima{
 	float: left;
-	width: 30%;
+	width: 20%;
 	/*padding: 30% 20%;*/
 }
-.erweima img{
-	width: 70%;
-	margin:46% 40%;
+.page1 .erweima img{
+	width: 80%;
+	margin:76% 60%;
 }
 form{
 	width: 50%;
@@ -217,4 +217,9 @@ select option{
 .content .right .erweima{
 	width: 56%;
 	/*margin-top: 4%;*/
+	margin-top: 14%;
+}
+.content .right .erweima img{
+	width: 60%;
+	margin:16% 0px 0px 35%;
 }
