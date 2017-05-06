@@ -1,0 +1,14 @@
+/node_modules
+/public/hot
+/public/storage
+/public/vend
+/storage/*.key
+/vendor
+/.idea
+/.vagrant
+Homestead.json
+Homestead.yaml
+npm-debug.log
+.env
+weixin.sublime-project
+weixin.sublime-workspace

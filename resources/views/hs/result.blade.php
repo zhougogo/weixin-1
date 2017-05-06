@@ -13,8 +13,8 @@
                     <p class="fs">恭喜你答对了<span>{{$quantity}}</span>题</p>
                 @endif
                 <p class="aten">您有一份来自京东惠氏店铺的好礼，等待点击领取！</p>
-                <a href="http://coupon.m.jd.com/coupons/show.action?key=01be87ffecc74045848d7cd299eb292a&roleId=6405081&to=sale.jd.com/m/act/sbtJUVC3NlgfI.html">
-                    <img src="{{asset('img/get.png')}}" alt="">
+                <a class="lqBtm" href="http://coupon.m.jd.com/coupons/show.action?key=01be87ffecc74045848d7cd299eb292a&roleId=6405081&to=sale.jd.com/m/act/sbtJUVC3NlgfI.html">
+                    <img src="{{asset('img/lqBtm.png')}}" alt="">
                 </a>
                 <!--<img src="img/result.png"/>-->
             </div>

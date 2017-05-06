@@ -14,6 +14,7 @@
                 @foreach($questions as $question)
 
                         <div id="id{{$loop->index}}" class="subject @if(!$loop->first) hidden @endif">
+                            <span id="fontNum"></span>
                             <div class="title">
                                 {{$question->title}}
                             </div>
@@ -117,6 +118,7 @@
                 document.getElementById('id' + index).className = 'subject hidden';
                 document.getElementById('id' + (index + 1)).className = 'subject';
             }
+            document.getElementById('fontNum').html(index+1);
         }
         $('.subject p').click(function () {
 
